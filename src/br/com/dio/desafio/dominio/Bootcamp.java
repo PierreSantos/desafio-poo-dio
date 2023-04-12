@@ -10,9 +10,8 @@ public class Bootcamp {
 
     private String nome;
     private String descricao;
-    private final LocalDate dataInicial = LocalDate.now();
-
-    private final LocalDate dataFinal = dataInicial.plusDays(45);
+    private final LocalDate DATA_INICIAL = LocalDate.now();
+    private final LocalDate DATA_FINAL = DATA_INICIAL.plusDays(45);
     private Set<Dev> devsInscritos = new HashSet<>();
     private Set<Conteudo> conteudos = new LinkedHashSet<>();
 
@@ -33,19 +32,19 @@ public class Bootcamp {
     }
 
     public LocalDate getDataInicial() {
-        return dataInicial;
+        return DATA_INICIAL;
     }
 
     public LocalDate getDataFinal() {
-        return dataFinal;
+        return DATA_FINAL;
     }
 
     public Set<Dev> getDevsInscritos() {
         return devsInscritos;
     }
 
-    public void setDevsInscritos(Set<Dev> devsInscritos) {
-        this.devsInscritos = devsInscritos;
+    public void setDevsInscritos(Dev devsInscritos) {
+        this.devsInscritos.add(devsInscritos);
     }
 
     public Set<Conteudo> getConteudos() {
@@ -61,11 +60,12 @@ public class Bootcamp {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Bootcamp bootcamp = (Bootcamp) o;
-        return nome.equals(bootcamp.nome) && descricao.equals(bootcamp.descricao) && dataInicial.equals(bootcamp.dataInicial) && dataFinal.equals(bootcamp.dataFinal) && devsInscritos.equals(bootcamp.devsInscritos) && conteudos.equals(bootcamp.conteudos);
+        return nome.equals(bootcamp.nome) && descricao.equals(bootcamp.descricao) && DATA_INICIAL.equals(bootcamp.DATA_INICIAL) && DATA_FINAL.equals(bootcamp.DATA_FINAL) && devsInscritos.equals(bootcamp.devsInscritos) && conteudos.equals(bootcamp.conteudos);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nome, descricao, dataInicial, dataFinal, devsInscritos, conteudos);
+        return Objects.hash(nome, descricao, DATA_INICIAL, DATA_FINAL, devsInscritos, conteudos);
     }
+    
 }

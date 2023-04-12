@@ -51,5 +51,8 @@ public class Main {
         System.out.println("---");
         System.out.println("Conteúdos Concluídos" + devEduarda.getConteudosConcluidos());
         System.out.println("XP" + devEduarda.calcularTotalXp());
+
+        System.out.println(" devs inscritos   ");
+        System.out.println(bootcamp.getDevsInscritos());
     }
 }

@@ -13,7 +13,7 @@ public class Dev {
 
     public void inscreverBootcamp(Bootcamp bootcamp) {
         this.conteudosInscritos.addAll(bootcamp.getConteudos());
-        bootcamp.getDevsInscritos().add(this);
+        bootcamp.setDevsInscritos(this);
     }
 
     public void progredir() {
@@ -67,4 +67,11 @@ public class Dev {
     public int hashCode() {
         return Objects.hash(nome, conteudosInscritos, conteudosConcluidos);
     }
+
+    @Override
+    public String toString() {
+        return "Dev [nome = " + nome ;
+    }
+
+    
 }
